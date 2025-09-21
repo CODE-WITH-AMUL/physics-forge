@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Physics Forge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Physics Forge** is a modern, interactive platform designed for students to **learn physics concepts faster and smarter**. It combines **3D visualizations**, **formula simulations**, **study tracking**, and **exam reminders** into a single web application. The project is built with **React** for the frontend and **Django** for backend APIs, creating a seamless **SPA experience** with dynamic content.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🏆 Features
 
-### `npm start`
+### Core Features
+- **Interactive 3D Visualizations:** Render formulas and physics concepts in 3D for better understanding.
+- **Custom Simulations:** Input formulas and observe results dynamically in 2D/3D or theory mode.
+- **Organized Learning:** Track subjects, notes, and references in one centralized platform.
+- **Smart Reminders:** Receive notifications for exams, deadlines, and study schedules using AI reminders.
+- **Progress Tracking:** Charts and analytics to measure your growth and performance over time.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Authentication & User Management
+- **Login / Register:** Secure authentication system with Django backend.
+- **Dynamic UI based on Authentication:** Conditional rendering of UI components similar to Django’s `user.is_authenticated`.
+- **Dashboard:** Personalized dashboard for logged-in users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### SPA Routing
+- Fully SPA-based routing using **React Router**.
+- Pages include:
+  - `/` → GetStarted (home landing page)
+  - `/login` → Login page
+  - `/register` → Register page
+  - `/dashboard` → User dashboard (protected)
 
-### `npm test`
+### Frontend
+- Built with **React + Vanilla JS modules** (Three.js animations embedded).
+- Dynamic background with **Three.js particles and orbit controls**.
+- Responsive design optimized for desktops and mobile.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+- **Django REST API** for:
+  - Authentication status (`/api/auth-status/`)
+  - User management (login, register)
+  - Optional: Storing simulation data, progress, and analytics.
 
-### `npm run build`
+### 3D Simulation Engine
+- Uses **Three.js** for advanced 3D rendering.
+- Custom particle systems and animations.
+- Supports interaction like **rotation, zoom, and drag**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js (v18+)
+- npm / yarn
+- Python 3.12+
+- Django 4.x
+- PostgreSQL / SQLite
 
-### `npm run eject`
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm start ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm start
+```
