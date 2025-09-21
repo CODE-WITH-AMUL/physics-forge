@@ -54,15 +54,7 @@
 - PostgreSQL / SQLite
 
 ### Frontend Setup
-```bash
 cd frontend
 npm install
 npm start ```
 
-
-### Frontend Setup
-```bash
-cd frontend
-npm install
-npm start
-```

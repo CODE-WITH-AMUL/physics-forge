@@ -5,15 +5,18 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
+from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated
 
 
 # -----------------[REGISTER API VIEW]----------------------- #
 class RegisterView(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         username = request.data.get('username')
         email = request.data.get('email')
         password = request.data.get('password')
-        confirm_password = request.data.get('confirm_password')  # ✅ match frontend
+        confirm_password = request.data.get('confirm_password')  
 
         try:
             # Password mismatch check
@@ -53,6 +56,7 @@ class RegisterView(APIView):
 
 # ----------------------[LOGIN API VIEW ]------------------------- #
 class LoginView(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
@@ -72,3 +76,16 @@ class LoginView(APIView):
                 {"error": "Invalid Credentials"},
                 status=status.HTTP_401_UNAUTHORIZED
             )
+            
+            
+class LogoutView(APIView):
+    permission_classes = (IsAuthenticated,)
+    def post(self, request):
+        
+        try:
+            refresh_token = request.data["refresh_token"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response(status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
